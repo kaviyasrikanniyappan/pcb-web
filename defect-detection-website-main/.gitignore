@@ -1,0 +1,10 @@
+venv/
+dataset/
+runs/
+uploads/
+*.pt
+*.pth
+*.onnx
+__pycache__/
+*.pyc
+.env

@@ -1,0 +1,7 @@
+{
+  "name": "PCB Vision Defect Detection",
+  "description": "A Vision-Based Machine Learning Approach for PCB Defect Detection using Gemini Vision AI.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

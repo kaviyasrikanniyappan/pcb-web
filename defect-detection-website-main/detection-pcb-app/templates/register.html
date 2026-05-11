@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}Register - PCB Vision{% endblock %}
+
+{% block content %}
+<div class="auth-background" id="auth-background">
+    <!-- Animated Particles -->
+    <div class="particle" style="top: 15%; left: 15%; width: 4px; height: 4px;"></div>
+    <div class="particle" style="top: 25%; left: 75%; width: 6px; height: 6px;"></div>
+    <div class="particle" style="top: 55%; left: 25%; width: 3px; height: 3px;"></div>
+    <div class="particle" style="top: 75%; left: 65%; width: 5px; height: 5px;"></div>
+    <div class="particle" style="top: 35%; left: 45%; width: 4px; height: 4px;"></div>
+    <div class="particle" style="top: 85%; left: 35%; width: 3px; height: 3px;"></div>
+    <div class="particle" style="top: 45%; left: 85%; width: 5px; height: 5px;"></div>
+    <div class="particle" style="top: 65%; left: 15%; width: 4px; height: 4px;"></div>
+</div>
+
+<div class="auth-container">
+    <div class="auth-card">
+        <!-- Logo Section -->
+        <div class="auth-logo">
+            <div class="auth-logo-icon">
+                <i class="fas fa-microchip"></i>
+            </div>
+            <h1>PCB Vision</h1>
+            <p class="auth-subtitle">AI-Powered PCB Defect Detection</p>
+        </div>
+
+        <!-- Welcome Section -->
+        <div class="auth-welcome">
+            <h2>Create Account</h2>
+            <p>Join us to start detecting PCB defects with AI</p>
+        </div>
+
+        <!-- Register Form -->
+        <form class="auth-form" id="register-form" onsubmit="handleRegister(event)">
+            <div class="form-group">
+                <label for="register-name">Full Name</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-user input-icon"></i>
+                    <input
+                        type="text"
+                        id="register-name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required
+                        autocomplete="name"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="register-email">Email Address</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input
+                        type="email"
+                        id="register-email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                        autocomplete="email"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="register-password">Password</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input
+                        type="password"
+                        id="register-password"
+                        name="password"
+                        placeholder="Create a password (min. 6 characters)"
+                        required
+                        minlength="6"
+                        autocomplete="new-password"
+                    >
+                    <button type="button" class="password-toggle" onclick="togglePassword('register-password')">
+                        <i class="fas fa-eye" id="register-password-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="register-confirm-password">Confirm Password</label>
+                <div class="input-wrapper">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input
+                        type="password"
+                        id="register-confirm-password"
+                        name="confirm_password"
+                        placeholder="Confirm your password"
+                        required
+                        autocomplete="new-password"
+                    >
+                    <button type="button" class="password-toggle" onclick="togglePassword('register-confirm-password')">
+                        <i class="fas fa-eye" id="register-confirm-password-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="checkbox-group">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="terms-agree" class="checkbox-input" required>
+                    <div class="checkbox-custom"></div>
+                </div>
+                <label for="terms-agree" class="checkbox-label">
+                    I agree to the <a href="#" style="color: var(--primary-green);">Terms of Service</a> and <a href="#" style="color: var(--primary-green);">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" class="auth-btn" id="register-btn">
+                <span id="register-btn-text">Create Account</span>
+            </button>
+        </form>
+
+        <!-- Auth Links -->
+        <div class="auth-links">
+            <p class="auth-link">
+                Already have an account?
+                <a href="/login">Sign in here</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
